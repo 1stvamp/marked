@@ -14,11 +14,9 @@ setup(
     url='https://github.com/1stvamp/marked.py',
     install_requires=[
         'beautifulsoup4 >= 4.3',
-        'markgen >= 0.9.3',
+        'markgen >= 0.9.4',
         'six >= 1.4'
     ],
     packages=find_packages(exclude=['marked_tests']),
-    package_data={},
-    include_package_data=True,
     license='BSD'
 )
