@@ -13,7 +13,7 @@ setup(
     author_email='wes@1stvamp.org',
     url='https://github.com/1stvamp/marked.py',
     install_requires=[
-        'BeautifulSoup >= 3.0',
+        'beautifulsoup4 >= 4.3',
         'markgen >= 0.9'
     ],
     packages=find_packages(exclude=['marked_tests']),
