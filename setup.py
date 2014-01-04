@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='marked',
-    description='',
+    description='Library/utility that converts HTML to markdown text',
     long_description=open('README.rst').read(),
     provides=['marked'],
     version='1.0.0',
