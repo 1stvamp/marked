@@ -1,5 +1,7 @@
 import unittest
 
+import marked
+
 
 class MarkedTests(unittest.TestCase):
     pass
