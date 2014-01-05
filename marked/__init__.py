@@ -1,7 +1,29 @@
 import markgen
-from six import string_types
 from bs4 import BeautifulSoup
 
+TAGS = {
+    'p': 'paragraph',
+    'div': 'paragraph',
+    'a': 'link',
+    'strong': 'emphasis',
+    'em': 'emphasis',
+    'b': 'emphasis',
+    'i': 'emphasis',
+    'u': 'emphasis',
+    'img': 'image',
+    'image': 'image',
+    'blockquote': 'quote',
+    'pre': 'pre',
+    'code': 'pre',
+    'h1': 'header',
+    'h2': 'header',
+    'h3': 'header',
+    'h4': 'header',
+    'h5': 'header',
+    'h6': 'header',
+    'ul': 'ulist',
+    'ol': 'olist'
+}
 
 def markup_to_markdown(content):
     soup = BeautifulSoup(content)
@@ -16,8 +38,12 @@ def _iterate_over_contents(contents):
     out = u''
 
     for c in contents:
-        if not isinstance(c, string_types):
-            c = _iterate_over_contents(c)
+        if hasattr(c, 'contents'):
+            c = _iterate_over_contents(c.contents)
+
+        if c.name in TAGS:
+            wrap = getattr(markgen, TAGS[c.name])
+            c = wrap(c)
 
         out += u"\n{0}".format(c)
 
