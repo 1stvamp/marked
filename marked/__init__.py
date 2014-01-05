@@ -39,7 +39,7 @@ def _iterate_over_contents(contents):
 
     for c in contents:
         if hasattr(c, 'contents'):
-            c.string = _iterate_over_contents(c.contents)
+            c.string.replace_with(_iterate_over_contents(c.contents))
 
         if c.name in TAGS:
             wrap = getattr(markgen, TAGS[c.name])
