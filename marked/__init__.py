@@ -1,6 +1,7 @@
 import markgen
 from bs4 import BeautifulSoup
 
+# Tag name to markgen function mappings
 TAGS = {
     'p': 'paragraph',
     'div': 'paragraph',
@@ -25,6 +26,7 @@ TAGS = {
     'ol': 'olist'
 }
 
+# Default markgen function kwargs for some mapped tags
 DEFAULT_ARGS = {
     'code': {
         'inline': True
@@ -46,6 +48,7 @@ DEFAULT_ARGS = {
     }
 }
 
+# Map tag attributes to markgen function kwargs
 ATTRS = {
     'a': {
         'href': 'address',
@@ -61,6 +64,7 @@ ATTRS = {
     }
 }
 
+# Which tags should pass <li> elements as a []
 LISTS = [
     'ul',
     'ol'
