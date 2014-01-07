@@ -14,7 +14,7 @@ TAGS = {
     'image': 'image',
     'blockquote': 'quote',
     'pre': 'pre',
-    'code': 'pre',
+    'code': 'inline_pre',
     'h1': 'header',
     'h2': 'header',
     'h3': 'header',
@@ -24,6 +24,26 @@ TAGS = {
     'ul': 'ulist',
     'ol': 'olist'
 }
+
+ATTRS = {
+    'a': {
+        'href': 'address',
+        'title': 'title'
+    },
+    'img': {
+        'src': 'address',
+        'title': 'title'
+    },
+    'image': {
+        'src': 'address',
+        'title': 'title'
+    }
+}
+
+LISTS = [
+    'ul',
+    'ol'
+]
 
 def markup_to_markdown(content):
     soup = BeautifulSoup(content)
@@ -43,7 +63,19 @@ def _iterate_over_contents(contents):
 
         if c.name in TAGS:
             wrap = getattr(markgen, TAGS[c.name])
-            c = wrap(c.string)
+
+            kwargs = {}
+            if c.name in ATTRS:
+                for attr, attr_map in ATTRS[c.name]:
+                    if attr in c.attrs:
+                        kwargs[attr_map] = c.attrs[attr]
+
+            if c.name in LISTS:
+                value = c.find_all('li')
+            else:
+                value = c.string
+
+            c = wrap(value, **kwargs)
 
         out += u"\n{0}".format(c)
 
