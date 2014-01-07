@@ -14,7 +14,7 @@ TAGS = {
     'image': 'image',
     'blockquote': 'quote',
     'pre': 'pre',
-    'code': 'inline_pre',
+    'code': 'pre',
     'h1': 'header',
     'h2': 'header',
     'h3': 'header',
@@ -23,6 +23,27 @@ TAGS = {
     'h6': 'header',
     'ul': 'ulist',
     'ol': 'olist'
+}
+
+DEFAULT_ARGS = {
+    'code': {
+        'inline': True
+    },
+    'h2': {
+        'depth': 2
+    },
+    'h3': {
+        'depth': 3
+    },
+    'h4': {
+        'depth': 4
+    },
+    'h5': {
+        'depth': 5
+    },
+    'h6': {
+        'depth': 6
+    }
 }
 
 ATTRS = {
@@ -64,7 +85,7 @@ def _iterate_over_contents(contents):
         if c.name in TAGS:
             wrap = getattr(markgen, TAGS[c.name])
 
-            kwargs = {}
+            kwargs = DEFAULT_ARGS.get(c.name, {}).copy()
             if c.name in ATTRS:
                 for attr, attr_map in ATTRS[c.name]:
                     if attr in c.attrs:
