@@ -1,3 +1,6 @@
+from __future__ import print_function
+
+from sys import stdout
 from tornado.ioloop import IOLoop
 from tornado.httpclient import AsyncHTTPClient
 from tornado.web import asynchronous, RequestHandler, Application
@@ -29,4 +32,5 @@ application = Application([
 
 if __name__ == "__main__":
     application.listen(8888)
+    print('Service started on http://localhost:8888/', file=stdout)
     IOLoop.instance().start()
