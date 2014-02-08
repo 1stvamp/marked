@@ -4,6 +4,9 @@ marked
 .. image:: https://travis-ci.org/1stvamp/marked.png?branch=master
    :target: https://travis-ci.org/1stvamp/marked
 
+Introduction
+------------
+
 ``marked`` is a library and CLI utility for transforming HTML-ish (HTML, XHTML, HTML5 etc.)
 documents and fragments into `makrdown <http://daringfireball.net/projects/markdown/>`_
 formatted content.
@@ -18,5 +21,5 @@ library for extremely flexible markup parsing.
 .. license_
 
 License
-=======
+-------
 
