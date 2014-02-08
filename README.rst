@@ -17,6 +17,17 @@ with a more permissive license_, and using the excellent `BeautifulSoup <http://
 library for extremely flexible markup parsing.
 
 
+Installation
+------------
+
+
+Usage (CLI utility)
+-------------------
+
+
+Usage (library)
+---------------
+
 
 .. license_
 
