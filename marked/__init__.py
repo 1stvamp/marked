@@ -79,9 +79,7 @@ LISTS = [
 # We need to wrap these for "special" handling of whitespace
 WRAP_TAGS = [
     'code',
-    'pre
-'code',
-'pre''
+    'pre'
 ]
 
 REPLACE_NEWLINE_RE = r'[\n|\r\n|\r]{3,}'
