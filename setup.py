@@ -8,7 +8,7 @@ setup(
     description='Library/utility that converts HTML to markdown text',
     long_description=open('README.rst').read(),
     provides=['marked'],
-    version='1.0.0',
+    version='0.9.0',
     author='Wes Mason',
     author_email='wes@1stvamp.org',
     url='https://github.com/1stvamp/marked.py',
