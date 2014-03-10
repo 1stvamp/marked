@@ -76,6 +76,14 @@ LISTS = [
     'ol'
 ]
 
+# We need to wrap these for "special" handling of whitespace
+WRAP_TAGS = [
+    'code',
+    'pre
+'code',
+'pre''
+]
+
 REPLACE_NEWLINE_RE = r'[\n|\r\n|\r]{3,}'
 
 
@@ -89,8 +97,9 @@ def markup_to_markdown(content):
     contents = soup.body.contents if soup.body is not None else soup.contents
 
     # Return markdown with normalised whitespace
-    return re.sub(REPLACE_NEWLINE_RE, u'\n\n', _iterate_over_contents(contents),
+    output = re.sub(REPLACE_NEWLINE_RE, u'\n\n', _iterate_over_contents(contents),
                     re.UNICODE).strip()
+    return output
 
 
 def _iterate_over_contents(contents):
