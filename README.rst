@@ -34,3 +34,4 @@ Usage (library)
 License
 -------
 
+marked is distributed under a `3-clause BSD license <./LICENSE>`_.
