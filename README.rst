@@ -13,7 +13,7 @@ formatted content.
 
 
 It is inspired by Aaron Swartz' `html2text <http://www.aaronsw.com/2002/html2text/>`_, but
-with a more permissive license_. It also using the excellent `BeautifulSoup <http://www.crummy.com/software/BeautifulSoup/>`_
+with a more permissive license_. It also uses the excellent `BeautifulSoup <http://www.crummy.com/software/BeautifulSoup/>`_
 library for extremely flexible markup parsing.
 
 
